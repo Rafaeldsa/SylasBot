@@ -9,13 +9,19 @@ def start(bot, update):
 		text=response_message
 )
 
-def talk(bot, update, args):
+def talk(bot, update):
 	response_message = "Ola, meu nome eh Sylas, e o seu?"
 	bot.send_message(
 		chat_id=update.message.chat_id,
-		text=response_message + agrs[0]
+		text=response_message
 	)
-		
+
+def unknow(bot, update):
+    response_message = "EOQ?"
+    bot.send_message(
+        chat_id=update.message.chat_id,
+        text=response_message
+)	
 
 def main():
 	updater = Updater(token=TELEGRAM_TOKEN)
@@ -24,7 +30,10 @@ def main():
 		CommandHandler('start', start)
 	)
 	dispatcher.add_handler(
-		CommandHandler('talk',talk)
+        CommandHandler('talk', talk)
+    )
+	dispatcher.add_handler(
+		MessageHandler(Filters.command, unknow)
 	)
 	updater.start_polling()
 	updater.idle()

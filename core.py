@@ -19,7 +19,7 @@ def talk(bot, update):
 		chat_id=update.message.chat_id,
 		text=response_message
 	)
-	time.sleep(15)
+	time.sleep(10)
 	bot.send_message(
 		chat_id=update.message.chat_id,
 		text="fuedasse"

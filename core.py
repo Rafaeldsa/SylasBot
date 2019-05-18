@@ -5,7 +5,7 @@ from conf.settings import TELEGRAM_TOKEN
 #coding: utf-8
 
 updater = Updater(token=TELEGRAM_TOKEN)
-
+dispatcher = updater.dispatcher
 def start(bot, update):
 	response_message = "Salve"
 	bot.send_message(
@@ -32,11 +32,15 @@ def unknow(bot, update):
         text=response_message
 )	
 
-	
-dispatcher = updater.dispatcher
-dispatcher.add_handler(CommandHandler('start', start))
-dispatcher.add_handler(CommandHandler('talk', talk))
-dispatcher.add_handler(MessageHandler(Filters.command, unknow))
+starth = CommandHandler('start', start)
+talkh = CommandHandler('talk', talk)
+unkh = MessageHandler(Filters.command, unknow)
+
+handlers = [starth, talkh, unkh]
+
+for e in handlers:
+	dispatcher.add_handler(e)
+
 def main_loop():
 	updater.start_polling()
 	

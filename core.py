@@ -18,6 +18,11 @@ def talk(bot, update):
 		chat_id=update.message.chat_id,
 		text=response_message
 	)
+	time.sleep(15)
+	bot.send_message(
+		chat_id=update.message.chat_id,
+		text="fuedasse"
+	)
 
 def unknow(bot, update):
     response_message = "EOQ?"

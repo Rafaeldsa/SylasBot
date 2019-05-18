@@ -2,6 +2,9 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 import time
 from conf.settings import TELEGRAM_TOKEN
 #coding: utf-8
+
+updater = Updater(token=TELEGRAM_TOKEN)
+
 def start(bot, update):
 	response_message = "Salve"
 	bot.send_message(
@@ -24,7 +27,7 @@ def unknow(bot, update):
 )	
 
 def main():
-	updater = Updater(token=TELEGRAM_TOKEN)
+	
 	dispatcher = updater.dispatcher
 	dispatcher.add_handler(
 		CommandHandler('start', start)

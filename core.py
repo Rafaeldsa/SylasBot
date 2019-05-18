@@ -35,10 +35,12 @@ def main():
 	dispatcher.add_handler(
 		MessageHandler(Filters.command, unknow)
 	)
+def main_loop():
 	updater.start_polling()
-	updater.idle()
+	
 
 
 if __name__ == '__main__':
+	main_loop()
     print("No ar...")
 main()

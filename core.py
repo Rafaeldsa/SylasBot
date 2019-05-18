@@ -1,5 +1,6 @@
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 import time
+import sys
 from conf.settings import TELEGRAM_TOKEN
 #coding: utf-8
 
@@ -31,24 +32,21 @@ def unknow(bot, update):
         text=response_message
 )	
 
-def main():
 	
-	dispatcher = updater.dispatcher
-	dispatcher.add_handler(
-		CommandHandler('start', start)
-	)
-	dispatcher.add_handler(
-        CommandHandler('talk', talk)
-    )
-	dispatcher.add_handler(
-		MessageHandler(Filters.command, unknow)
-	)
+dispatcher = updater.dispatcher
+dispatcher.add_handler(CommandHandler('start', start))
+dispatcher.add_handler(CommandHandler('talk', talk))
+dispatcher.add_handler(MessageHandler(Filters.command, unknow))
 def main_loop():
 	updater.start_polling()
 	
 
 
 if __name__ == '__main__':
-	main_loop()
-	print("No ar...")
-main()
+	try:
+		main_loop()
+	except Exception as e:
+		print (e)
+		sys.exit(0)
+	
+

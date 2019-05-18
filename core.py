@@ -42,5 +42,5 @@ def main_loop():
 
 if __name__ == '__main__':
 	main_loop()
-    print("No ar...")
+	print("No ar...")
 main()

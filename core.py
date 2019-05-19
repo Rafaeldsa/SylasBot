@@ -1,10 +1,11 @@
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 import time
 import sys
-from conf.settings import TELEGRAM_TOKEN
+
 #coding: utf-8
 
-updater = Updater(token=TELEGRAM_TOKEN)
+token = "838508549:AAFlkjeZQT8R7VoqBB_odnRdhljMY3Wmi6o"
+updater = Updater(token=token)
 dispatcher = updater.dispatcher
 def start(bot, update):
 	response_message = "Salve"

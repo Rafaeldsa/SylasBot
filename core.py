@@ -3,7 +3,7 @@ import time
 import sys
 
 #coding: utf-8
-
+#.
 token = "838508549:AAFlkjeZQT8R7VoqBB_odnRdhljMY3Wmi6o"
 updater = Updater(token=token)
 dispatcher = updater.dispatcher

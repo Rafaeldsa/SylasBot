@@ -2,6 +2,7 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 import time
 import sys
 
+#Otten esteve aqui HAHAHA
 #coding: utf-8
 #.
 token = "838508549:AAFlkjeZQT8R7VoqBB_odnRdhljMY3Wmi6o"
